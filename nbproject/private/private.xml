@@ -3,18 +3,40 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/vista/VentanaP.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/vista/VentanaMundial.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/controlador/SimularFaseGrupos.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/controlador/QuienDefiende.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/vista/VentanaSegunda.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/mundial/Mundial.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/vista/VentanaGrupos.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/controlador/MenuFinal.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/controlador/Factorf.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/controlador/ListaEquipos.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/controlador/SegundaFase.java</file>
-            <file>file:/C:/Users/Escar/Documents/NetBeansProjects/Mundial%20CB/src/vista/VentanaPartido.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/CreadorEquiposDesdeDB.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/Leer.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/SimularTurno.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/Grupo.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/vista/VentanaMundial.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/AsignarForm.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/Escribir.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/SegundaFase.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/SimularFaseGrupos.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/Equipo.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/vista/VentanaRegistro.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/Distancia.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/Partido.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/FaseGrupos.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/Jugador.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/vista/VentanaGrupos.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/ConsultaSQL.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/ListaEquipos.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/Cancha.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/vista/VentanaP.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/AsignarPosiciones.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/Checker.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/AsignarOp.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/VerPos.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/QuienDefiende.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/SimularPartido.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/vista/VentanaPartidos.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/AsignarObj.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/Estrategias.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/controlador/Factorf.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/vista/VentanaH.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/modelo/Pelota.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/vista/VentanaSegunda.java</file>
+            <file>file:/C:/Users/Escar/Desktop/Mundial%20CB%20mas%20bellako/src/mundial/Mundial.java</file>
         </group>
     </open-files>
 </project-private>

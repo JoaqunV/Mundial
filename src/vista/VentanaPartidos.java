@@ -6,19 +6,19 @@
 
 package vista;
 import controlador.*;
-import javax.swing.DefaultListModel;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import modelo.Cancha;
 import modelo.Pelota;
 /**
  *
  * @author Escar
+ * 
+ * VentanaPartidos muestra por pantalla la simulacion de un partido y permite la interaccion de usuario
  */
 public class VentanaPartidos extends javax.swing.JDialog {
     ListaEquipos equipos = new ListaEquipos();
-    private VentanaP padre=(VentanaP) this.getParent();
+    
     /**
      * Creates new form VentanaPartidos
      */
@@ -63,10 +63,22 @@ public class VentanaPartidos extends javax.swing.JDialog {
         resultado = new javax.swing.JLabel();
         botonSeleccionarEquipos = new javax.swing.JButton();
         botonEquiposAleatorios = new javax.swing.JButton();
+        FormacionEquipo1 = new javax.swing.JComboBox();
+        FormacionEquipo2 = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Partido");
+        setResizable(false);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Brazil 2014", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setText("Partido");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
 
         listaEquipo2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaEquipo2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,6 +88,8 @@ public class VentanaPartidos extends javax.swing.JDialog {
         });
         jScrollPane2.setViewportView(listaEquipo2);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 149, -1));
+
         listaEquipo1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaEquipo1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -84,9 +98,15 @@ public class VentanaPartidos extends javax.swing.JDialog {
         });
         jScrollPane3.setViewportView(listaEquipo1);
 
-        jLabel2.setText("Equipo 2");
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 149, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel2.setText("Equipo 2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("Equipo 1");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
         botonSimularPartido.setText("Simular");
         botonSimularPartido.setEnabled(false);
@@ -95,12 +115,15 @@ public class VentanaPartidos extends javax.swing.JDialog {
                 botonSimularPartidoActionPerformed(evt);
             }
         });
+        jPanel1.add(botonSimularPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 440, 127, 47));
 
+        resultado.setText("Resultado");
         resultado.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 resultadoPropertyChange(evt);
             }
         });
+        jPanel1.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, 531, 29));
 
         botonSeleccionarEquipos.setText("Seleccionar Equipos");
         botonSeleccionarEquipos.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +131,7 @@ public class VentanaPartidos extends javax.swing.JDialog {
                 botonSeleccionarEquiposActionPerformed(evt);
             }
         });
+        jPanel1.add(botonSeleccionarEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
 
         botonEquiposAleatorios.setText("Equipos Aleatorios");
         botonEquiposAleatorios.addActionListener(new java.awt.event.ActionListener() {
@@ -115,86 +139,54 @@ public class VentanaPartidos extends javax.swing.JDialog {
                 botonEquiposAleatoriosActionPerformed(evt);
             }
         });
+        jPanel1.add(botonEquiposAleatorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 127, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(72, 72, 72))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(botonSeleccionarEquipos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonEquiposAleatorios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(botonSimularPartido)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addComponent(botonSimularPartido)
-                        .addGap(18, 18, 18)
-                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(botonSeleccionarEquipos)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonEquiposAleatorios)))
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
+        FormacionEquipo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Equilibrada (4-4-2)", "Volante Enganche (4-3-1-2)", "Ataque (4-3-3)", "Posesión (4-2-3-1)", "Laterales (3-5-2)", "Volantes (3-4-3)", "Defensa un delantero (5-4-1)", "Defensa dos delanteros (5-3-2)" }));
+        FormacionEquipo1.setEnabled(false);
+        FormacionEquipo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FormacionEquipo1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(FormacionEquipo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 149, -1));
+
+        FormacionEquipo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Equilibrada (4-4-2)", "Volante Enganche (4-3-1-2)", "Ataque (4-3-3)", "Posesión (4-2-3-1)", "Laterales (3-5-2)", "Volantes (3-4-3)", "Defensa un delantero (5-4-1)", "Defensa dos delanteros (5-3-2)" }));
+        FormacionEquipo2.setEnabled(false);
+        FormacionEquipo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FormacionEquipo2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(FormacionEquipo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 149, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/imagen-03.jpg"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 211));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 638, -1, -1));
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/roja.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 620, 360));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSimularPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSimularPartidoActionPerformed
-        // TODO add your handling code here:
         int index1 = listaEquipo1.getSelectedIndex();
         int index2 = listaEquipo2.getSelectedIndex();
+        int form1 = FormacionEquipo1.getSelectedIndex()+1;
+        int form2 = FormacionEquipo2.getSelectedIndex()+1;
         if(index1==index2){
             resultado.setText("Ingrese Equipos Distintos");
         }else{
@@ -206,7 +198,7 @@ public class VentanaPartidos extends javax.swing.JDialog {
         equipos.getEquipos(index2).setGoles(0);
         cancha.setEquipos(equipos.getEquipos(index1), 0);
         cancha.setEquipos(equipos.getEquipos(index2), 1);
-        int[] n=SimularPartido.simularPartido(cancha, pelota, 0, 0);  // 0 0 arreglar formaciones
+        int[] n=SimularPartido.simularPartido(cancha, pelota, form1, form2);  // 0 0 arreglar formaciones
                        
         if(n[0]==0){
             resultado.setText("Equipo de "+equipos.getEquipos(index1).getNombre().trim()+" gana a "+equipos.getEquipos(index2).getNombre().trim()+" con "+equipos.getEquipos(index1).getGoles()+" goles a "+equipos.getEquipos(index2).getGoles());
@@ -249,7 +241,6 @@ public class VentanaPartidos extends javax.swing.JDialog {
 
     private void listaEquipo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaEquipo1MouseClicked
         
-        
     }//GEN-LAST:event_listaEquipo1MouseClicked
 
     private void listaEquipo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaEquipo2MouseClicked
@@ -261,6 +252,8 @@ public class VentanaPartidos extends javax.swing.JDialog {
         // TODO add your handling code here:
         listaEquipo1.setEnabled(true);
         listaEquipo2.setEnabled(true);
+        FormacionEquipo1.setEnabled(true);
+        FormacionEquipo2.setEnabled(true);
         botonSimularPartido.setEnabled(true);
         
     }//GEN-LAST:event_botonSeleccionarEquiposActionPerformed
@@ -312,59 +305,26 @@ public class VentanaPartidos extends javax.swing.JDialog {
         
     }//GEN-LAST:event_botonEquiposAleatoriosActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPartidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPartidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPartidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPartidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void FormacionEquipo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormacionEquipo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FormacionEquipo1ActionPerformed
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    VentanaPartidos dialog = new VentanaPartidos(new javax.swing.JFrame(), true);
-                    dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                        @Override
-                        public void windowClosing(java.awt.event.WindowEvent e) {
-                            System.exit(0);
-                        }
-                    });
-                    dialog.setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(VentanaPartidos.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
+    private void FormacionEquipo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormacionEquipo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FormacionEquipo2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox FormacionEquipo1;
+    private javax.swing.JComboBox FormacionEquipo2;
     private javax.swing.JButton botonEquiposAleatorios;
     private javax.swing.JButton botonSeleccionarEquipos;
     private javax.swing.JButton botonSimularPartido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

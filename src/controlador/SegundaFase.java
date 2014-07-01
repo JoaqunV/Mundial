@@ -4,6 +4,9 @@ import modelo.*;
 /**
  *
  * @author Escar
+ * 
+ * SegundaFase genera la simulacion de una segunda fase en un mundial de futbol utilizando partidos con
+ * eliminacion directa
  */
 public class SegundaFase {
     public static Equipo simular(Equipo[] clasificados){ //16 equipos
@@ -13,7 +16,8 @@ public class SegundaFase {
         Equipo finalWin;
         int[] win;
         int octWin=0;
-        System.out.println("=========Octavos==========");
+        String s="=========Octavos==========";
+        Escribir.Escribir(s, true);
         for (int i=0;i<15;i=i+2){
                 Cancha partido1= new Cancha();
                 Pelota pelota1= new Pelota();
@@ -25,11 +29,13 @@ public class SegundaFase {
                 //setear formacion en algun momento
                 win=SimularPartido.simularPartido(partido1, pelota1, clasificados[i].getFormacion(), clasificados[i+1].getFormacion());
                 if(win[0]!=2){
-                    System.out.println("El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s="El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles";
+                    Escribir.Escribir(s, true);
                     octavosWin[octWin]=partido1.getEquipoX(win[0]);
                     octWin++;
                 }else{
-                    System.out.println("Empate van a penales");
+                    s="Empate van a penales";
+                    Escribir.Escribir(s, true);
                     int comp=0;//comprobante
                     while(comp==0){
                         int[] penal;
@@ -48,13 +54,15 @@ public class SegundaFase {
                             comp=0;
                         }
                     }
-                    System.out.println("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s=("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    Escribir.Escribir(s, true);
                     octavosWin[octWin]=partido1.getEquipoX(win[0]);
                     octWin++;
                 }
         }
         int cuarWin=0;
-        System.out.println("==========Cuartos==========");
+        s=("==========Cuartos==========");
+        Escribir.Escribir(s, true);
         for(int i=0;i<7;i=i+2){
             Cancha partido1= new Cancha();
                 Pelota pelota1= new Pelota();
@@ -66,11 +74,13 @@ public class SegundaFase {
                 //setear formacion en algun momento
                 win=SimularPartido.simularPartido(partido1, pelota1, clasificados[i].getFormacion(), clasificados[i+1].getFormacion());
                 if(win[0]!=2){
-                    System.out.println("El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s=("El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    Escribir.Escribir(s, true);
                     cuartosWin[cuarWin]=partido1.getEquipoX(win[0]);
                     cuarWin++;
                 }else{
-                    System.out.println("Empate van a penales");
+                    s=("Empate van a penales");
+                    Escribir.Escribir(s, true);
                     int comp=0;//comprobante
                     while(comp==0){
                         int[] penal;
@@ -89,14 +99,16 @@ public class SegundaFase {
                             comp=0;
                         }
                     }
-                    System.out.println("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s=("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    Escribir.Escribir(s, true);
                     cuartosWin[cuarWin]=partido1.getEquipoX(win[0]);
                     cuarWin++;
                 }
         }
         
         int semiWin=0;
-        System.out.println("========SemiFinal==========");
+        s=("========SemiFinal==========");
+        Escribir.Escribir(s, true);
         for(int i=0;i<3;i=i+2){
                 Cancha partido1= new Cancha();
                 Pelota pelota1= new Pelota();
@@ -108,11 +120,13 @@ public class SegundaFase {
                 //setear formacion en algun momento
                 win=SimularPartido.simularPartido(partido1, pelota1, clasificados[i].getFormacion(), clasificados[i+1].getFormacion());
                 if(win[0]!=2){
-                    System.out.println("El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s=("El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    Escribir.Escribir(s, true);
                     semisWin[semiWin]=partido1.getEquipoX(win[0]);
                     semiWin++;
                 }else{
-                    System.out.println("Empate van a penales");
+                    s=("Empate van a penales");
+                    Escribir.Escribir(s, true);
                     int comp=0;//comprobante
                     while(comp==0){
                         int[] penal;
@@ -131,7 +145,8 @@ public class SegundaFase {
                             comp=0;
                         }
                     }
-                    System.out.println("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s=("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    Escribir.Escribir(s, true);
                     semisWin[semiWin]=partido1.getEquipoX(win[0]);
                     semiWin++;
                 }
@@ -144,15 +159,18 @@ public class SegundaFase {
                 semisWin[1].setGoles(0);
                 partido1.setEquipos(semisWin[0], 0);
                 partido1.setEquipos(semisWin[1], 1);
-                System.out.println("=======Final=============");
+                s=("=======Final=============");
+                Escribir.Escribir(s, true);
                 //setear formacion en algun momento
                 win=SimularPartido.simularPartido(partido1, pelota1, clasificados[0].getFormacion(), clasificados[1].getFormacion());
                 if(win[0]!=2){
-                    System.out.println("El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s=("El equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    Escribir.Escribir(s, true);
                     finalWin=partido1.getEquipoX(win[0]);
                     
                 }else{
-                    System.out.println("Empate van a penales");
+                    s=("Empate van a penales");
+                    Escribir.Escribir(s, true);
                     int comp=0;//comprobante
                     while(comp==0){
                         int[] penal;
@@ -171,7 +189,8 @@ public class SegundaFase {
                             comp=0;
                         }
                     }
-                    System.out.println("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    s=("En penales el equipo "+partido1.getEquipoX(win[0]).getNombre().trim()+" gana el partido con "+partido1.getEquipoX(win[0]).getGoles()+" goles vs "+partido1.getEquipoX(win[1]).getNombre().trim()+" con "+partido1.getEquipoX(win[1]).getGoles()+" goles");
+                    Escribir.Escribir(s, true);
                     finalWin=partido1.getEquipoX(win[0]);
                 }
         

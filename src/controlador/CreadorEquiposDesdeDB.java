@@ -1,11 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package controlador;
-
+/**
+* 
+* 
+* CreadorEquiposDesdeDB se encarga de reunir a todos los jugadores de un equipo, junto a sus parametros
+* desde la base de datos, realizando un traspaso hacia nuestro modelo para un trabajo mas rapido
+**/
 
 import java.sql.SQLException;
 import modelo.Jugador;

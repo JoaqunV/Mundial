@@ -6,6 +6,7 @@ import modelo.*;
  * @author Escar
  * 
  *  AsignarObjse encarga de dar un objetivo a cada jugador en funcion de si tiene el balon y si es local
+ * el objetivo sera hacia el lugar que avanzara
  */
 public class AsignarObj { // arreglar para que los jugadores vuelvan a formacion o avancen hacia el arco si son del mismo equipo que tiene el balon
     public static void Objetivo(Cancha cancha, int equipo ,int jugador, Pelota pelota, int estrategia){

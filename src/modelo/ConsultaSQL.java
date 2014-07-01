@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package modelo;
 
@@ -15,6 +10,8 @@ import java.sql.Statement;
 /**
  *
  * @author Nicolas
+ * 
+ * ConsultaSQL es la conexion directa que se tiene con el servidor sql y sus datos
  */
 public class ConsultaSQL {
 
@@ -28,7 +25,7 @@ public class ConsultaSQL {
     
     public ConsultaSQL(){
         try {
-
+            // nombre de la BD: Mundial // usuario: Escar // pass: easy
             url = "jdbc:derby://localhost:1527/Mundial;user=Escar;password=easy";
             conexion=DriverManager.getConnection(url);
             sentencia= conexion.createStatement();            

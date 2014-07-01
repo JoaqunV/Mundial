@@ -5,6 +5,8 @@ import modelo.*;
 /**
  *
  * @author Escar
+ * 
+ * ListaEquipos es el encargado de crear los equipos con sus respectivos jugadores
  */
 public class ListaEquipos {
     int n=32;//numero de equipos base datos
@@ -21,10 +23,9 @@ public class ListaEquipos {
             this.equipos[n].setId(n);
         }
     nombreEquipo.cerrarConexion();
-            
-        
     }
    
+  
 
 
     public Equipo getEquipos(int i) {

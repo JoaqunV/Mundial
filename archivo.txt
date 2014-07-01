@@ -1,0 +1,86 @@
+
+Grupo 1 Brazil hizo 0 goles vs Croacia hizo 1
+Grupo 1 Brazil hizo 0 goles vs Mexico hizo 1
+Grupo 1 Brazil hizo 0 goles vs Camerun hizo 1
+Grupo 1 Croacia hizo 1 goles vs Mexico hizo 2
+Grupo 1 Croacia hizo 1 goles vs Camerun hizo 1
+Grupo 1 Mexico hizo 2 goles vs Camerun hizo 1
+Grupo 2 Espana hizo 0 goles vs Paises Bajos hizo 1
+Grupo 2 Espana hizo 0 goles vs Chile hizo 0
+Grupo 2 Espana hizo 0 goles vs Australia hizo 0
+Grupo 2 Paises Bajos hizo 1 goles vs Chile hizo 0
+Grupo 2 Paises Bajos hizo 1 goles vs Australia hizo 1
+Grupo 2 Chile hizo 0 goles vs Australia hizo 2
+Grupo 3 Colombia hizo 0 goles vs Grecia hizo 1
+Grupo 3 Colombia hizo 0 goles vs Costa de Marfil hizo 0
+Grupo 3 Colombia hizo 0 goles vs Japon hizo 0
+Grupo 3 Grecia hizo 1 goles vs Costa de Marfil hizo 1
+Grupo 3 Grecia hizo 1 goles vs Japon hizo 0
+Grupo 3 Costa de Marfil hizo 1 goles vs Japon hizo 0
+Grupo 4 Uruguay hizo 0 goles vs Costa Rica hizo 0
+Grupo 4 Uruguay hizo 0 goles vs Inglaterra hizo 0
+Grupo 4 Uruguay hizo 0 goles vs Italia hizo 1
+Grupo 4 Costa Rica hizo 0 goles vs Inglaterra hizo 1
+Grupo 4 Costa Rica hizo 0 goles vs Italia hizo 1
+Grupo 4 Inglaterra hizo 1 goles vs Italia hizo 2
+Grupo 5 Suiza hizo 0 goles vs Ecuador hizo 0
+Grupo 5 Suiza hizo 0 goles vs Francia hizo 0
+Grupo 5 Suiza hizo 0 goles vs Honduras hizo 0
+Grupo 5 Ecuador hizo 0 goles vs Francia hizo 0
+Grupo 5 Ecuador hizo 0 goles vs Honduras hizo 0
+Grupo 5 Francia hizo 0 goles vs Honduras hizo 0
+Grupo 6 Argentina hizo 0 goles vs Bosnia y Herzegovina hizo 1
+Grupo 6 Argentina hizo 0 goles vs Iran hizo 0
+Grupo 6 Argentina hizo 0 goles vs Nigeria hizo 0
+Grupo 6 Bosnia y Herzegovina hizo 2 goles vs Iran hizo 0
+Grupo 6 Bosnia y Herzegovina hizo 2 goles vs Nigeria hizo 0
+Grupo 6 Iran hizo 0 goles vs Nigeria hizo 1
+Grupo 7 Alemania hizo 0 goles vs Portugal hizo 0
+Grupo 7 Alemania hizo 0 goles vs Ghana hizo 0
+Grupo 7 Alemania hizo 0 goles vs Estados Unidos hizo 1
+Grupo 7 Portugal hizo 1 goles vs Ghana hizo 1
+Grupo 7 Portugal hizo 1 goles vs Estados Unidos hizo 2
+Grupo 7 Ghana hizo 1 goles vs Estados Unidos hizo 2
+Grupo 8 Belgica hizo 0 goles vs Argelia hizo 1
+Grupo 8 Belgica hizo 0 goles vs Rusia hizo 0
+Grupo 8 Belgica hizo 0 goles vs Corea del Sur hizo 0
+Grupo 8 Argelia hizo 1 goles vs Rusia hizo 1
+Grupo 8 Argelia hizo 1 goles vs Corea del Sur hizo 1
+Grupo 8 Rusia hizo 2 goles vs Corea del Sur hizo 1
+Ganadores grupo:A Mexico=9, Croacia= 4
+Ganadores grupo:B Paises Bajos=7, Australia= 5
+Ganadores grupo:C Grecia=7, Costa de Marfil= 5
+Ganadores grupo:D Italia=9, Inglaterra= 4
+Ganadores grupo:E Suiza=3, Ecuador= 3
+Ganadores grupo:F Bosnia y Herzegovina=9, Nigeria= 4
+Ganadores grupo:G Estados Unidos=9, Alemania= 2
+Ganadores grupo:H Argelia=5, Rusia= 5
+
+=================================
+
+=========Octavos==========
+Empate van a penales
+En penales el equipo Croacia gana el partido con 5 goles vs Mexico con 4 goles
+El equipo Australia gana el partido con 1 goles vs Paises Bajos con 0 goles
+El equipo Costa de Marfil gana el partido con 1 goles vs Grecia con 0 goles
+Empate van a penales
+En penales el equipo Italia gana el partido con 3 goles vs Inglaterra con 1 goles
+Empate van a penales
+En penales el equipo Suiza gana el partido con 4 goles vs Ecuador con 1 goles
+Empate van a penales
+En penales el equipo Bosnia y Herzegovina gana el partido con 1 goles vs Nigeria con 0 goles
+Empate van a penales
+En penales el equipo Alemania gana el partido con 4 goles vs Estados Unidos con 2 goles
+El equipo Rusia gana el partido con 1 goles vs Argelia con 0 goles
+==========Cuartos==========
+Empate van a penales
+En penales el equipo Croacia gana el partido con 5 goles vs Australia con 3 goles
+El equipo Italia gana el partido con 1 goles vs Costa de Marfil con 0 goles
+El equipo Bosnia y Herzegovina gana el partido con 1 goles vs Suiza con 0 goles
+El equipo Rusia gana el partido con 1 goles vs Alemania con 0 goles
+========SemiFinal==========
+El equipo Italia gana el partido con 1 goles vs Croacia con 0 goles
+El equipo Rusia gana el partido con 1 goles vs Bosnia y Herzegovina con 0 goles
+=======Final=============
+Empate van a penales
+En penales el equipo Italia gana el partido con 5 goles vs Rusia con 2 goles

@@ -4,6 +4,9 @@ import modelo.*;
 /**
  *
  * @author Escar
+ * 
+ * SimularFaseGrupos simula el desarrollo de una fase de grupos de futbol
+ * utilizando clasificacion por puntos para obtener 2 ganadores por grupo
  */
 public class SimularFaseGrupos {
     public static Equipo[] simular(FaseGrupos fase){
@@ -17,7 +20,8 @@ public class SimularFaseGrupos {
                 partido1.setEquipos(fase.getGrupos(i).getEquipos(j), 1);
                 //setear formacion en algun momento
                 SimularPartido.simularPartido(partido1, pelota1, fase.getGrupos(i).getEquipos(0).getFormacion(), fase.getGrupos(i).getEquipos(j).getFormacion());
-                System.out.println("Grupo "+(i+1)+" "+fase.getGrupos(i).getEquipos(0).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(0).getGoles()+" goles vs "+fase.getGrupos(i).getEquipos(j).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(j).getGoles());
+                String s="Grupo "+(i+1)+" "+fase.getGrupos(i).getEquipos(0).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(0).getGoles()+" goles vs "+fase.getGrupos(i).getEquipos(j).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(j).getGoles();
+                Escribir.Escribir(s, true);
             }
             for(int j=2;j<4;j++){ // partidos equipo 1 sin repetir
                 Cancha partido1= new Cancha();
@@ -26,7 +30,8 @@ public class SimularFaseGrupos {
                 partido1.setEquipos(fase.getGrupos(i).getEquipos(j), 1);
                 //setear formacion en algun momento
                 SimularPartido.simularPartido(partido1, pelota1, fase.getGrupos(i).getEquipos(1).getFormacion(), fase.getGrupos(i).getEquipos(j).getFormacion());
-                System.out.println("Grupo "+(i+1)+" "+fase.getGrupos(i).getEquipos(1).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(1).getGoles()+" goles vs "+fase.getGrupos(i).getEquipos(j).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(j).getGoles());
+                String s="Grupo "+(i+1)+" "+fase.getGrupos(i).getEquipos(1).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(1).getGoles()+" goles vs "+fase.getGrupos(i).getEquipos(j).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(j).getGoles();
+                Escribir.Escribir(s, true);
             }
             for(int j=3;j<4;j++){ // partidos equipo 2 y 3 sin repetir (for de bonito :B)
                 Cancha partido1= new Cancha();
@@ -35,7 +40,8 @@ public class SimularFaseGrupos {
                 partido1.setEquipos(fase.getGrupos(i).getEquipos(j), 1);
                 //setear formacion en algun momento
                 SimularPartido.simularPartido(partido1, pelota1, fase.getGrupos(i).getEquipos(2).getFormacion(), fase.getGrupos(i).getEquipos(j).getFormacion());
-                System.out.println("Grupo "+(i+1)+" "+fase.getGrupos(i).getEquipos(2).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(2).getGoles()+" goles vs "+fase.getGrupos(i).getEquipos(j).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(j).getGoles());
+                String s="Grupo "+(i+1)+" "+fase.getGrupos(i).getEquipos(2).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(2).getGoles()+" goles vs "+fase.getGrupos(i).getEquipos(j).getNombre().trim()+" hizo "+fase.getGrupos(i).getEquipos(j).getGoles();
+                Escribir.Escribir(s, true);
             }
             for(int j=0;j<4;j++){
                 puntos[j][0]=fase.getGrupos(i).getEquipos(j).getPuntos();
@@ -57,12 +63,7 @@ public class SimularFaseGrupos {
                     }
                 }
             }
-            /*
-            System.out.println("puntos ");
-            for(int j=0;j<4;j++){
-                System.out.print(" "+puntos[j][0]);
-            }
-            */
+            
             fase.getGrupos(i).setGanadores(fase.getGrupos(i).getEquipos(puntos[0][1]), fase.getGrupos(i).getEquipos(puntos[1][1]));
             //setear equipos ganadores falta
         }

@@ -11,8 +11,12 @@ import java.lang.Math;
 /**
  *
  * @author Escar
+ * 
+ * SimularPartido simula un partido de futbol con sus respectivas caracteristicas 
  */
 public class SimularPartido {
+    Pelota pelota=new Pelota();
+    Cancha cancha=new Cancha();
     public static int[]  simularPartido(Cancha cancha, Pelota pelota, int formacionA, int formacionB){
         int[] equipoGanador= new int[2]; 
         int comienza=(int)(Math.random()*2+1); //1 o 2
@@ -40,8 +44,8 @@ public class SimularPartido {
             pelota= new Pelota(cancha.getEquipoX(1).getJugadorX(0).getPosX(),cancha.getEquipoX(1).getJugadorX(0).getPosY(),true);    
                 
         }
-        for(int i=0;i<1000;i++){
-            //System.out.println("TURNO "+i);
+        for(int i=0;i<1000;i++){ //utilizamos mas turnos de los normales para que se pueda derrallorar de mejor manera los partidos
+           
             AsignarOp.asignar(cancha);
             SimularTurno.turno(cancha, pelota);
             
@@ -72,7 +76,7 @@ public class SimularPartido {
                 
         }
         for(int i=1000;i<2000;i++){
-            //System.out.println("TURNO "+i);
+            
             AsignarOp.asignar(cancha);
             SimularTurno.turno(cancha, pelota);
             

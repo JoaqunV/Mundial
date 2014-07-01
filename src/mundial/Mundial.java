@@ -6,7 +6,7 @@ import modelo.*;
 import vista.*;
 
 /**
- * Integrates Nicolas Olivares, Joaquin Villagra, Luis Tapia
+ * Integrates Nicolas Olivares, Luis Tapia, Joaquin Villagra
  * @author Escar
  */
 
@@ -14,8 +14,9 @@ public class Mundial
 {
     public static void main(String[] args) throws SQLException {
         
-        new VentanaP().setVisible(true);
+        VentanaP ventanaPrincipal = new VentanaP();
         //MenuFinal.menu();
+        ventanaPrincipal.setVisible(true);
         
     }      
 }

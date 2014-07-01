@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package vista;
 
+import controlador.Escribir;
 import controlador.ListaEquipos;
 import controlador.SimularFaseGrupos;
 import java.sql.SQLException;
@@ -20,6 +16,9 @@ import modelo.Grupo;
 /**
  *
  * @author Escar
+ * 
+ * VentanaGrupos Muestra por pantalla y permite la interaccion con usuario para simular
+ *  la fase de grupos 
  */
 public class VentanaGrupos extends javax.swing.JDialog {
     private VentanaP padre=(VentanaP) this.getParent();
@@ -30,6 +29,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
     public VentanaGrupos(java.awt.Frame parent, boolean modal) throws SQLException {
         super(parent, modal);
         initComponents();
+        
   
     }
 
@@ -104,26 +104,46 @@ public class VentanaGrupos extends javax.swing.JDialog {
         resultadoG = new javax.swing.JLabel();
         resultadoH = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        botonRegistro = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Fase de Grupos");
 
-        jLabel1.setText("Grupos");
+        jPanel1.setMinimumSize(new java.awt.Dimension(720, 1280));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1024, 768));
+        jPanel1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Brazil 2014", 0, 24)); // NOI18N
+        jLabel1.setText("Fase de Grupos");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 0, -1, -1));
 
         jLabel2.setText("Grupo A");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 114, -1, -1));
 
         jLabel3.setText("Grupo B");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 114, -1, -1));
 
         jLabel4.setText("Grupo C");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 114, -1, -1));
 
         jLabel5.setText("Grupo D");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 114, -1, -1));
 
         jLabel6.setText("Grupo E");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 279, -1, -1));
 
         jLabel7.setText("Grupo F");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 279, -1, -1));
 
         jLabel8.setText("Grupo G");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 279, -1, -1));
 
         jLabel9.setText("Grupo H");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 279, -1, -1));
 
         botonElegir.setText("Elegir Equipos");
         botonElegir.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +151,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 botonElegirActionPerformed(evt);
             }
         });
+        jPanel1.add(botonElegir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
 
         botonDefinidos.setText("Equipos Definidos");
         botonDefinidos.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +159,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 botonDefinidosActionPerformed(evt);
             }
         });
+        jPanel1.add(botonDefinidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
 
         boxA1.setEnabled(false);
         boxA1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +167,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxA1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 139, 130, -1));
 
         boxB1.setEnabled(false);
         boxB1.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +175,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxB1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 139, 130, -1));
 
         boxC1.setEnabled(false);
         boxC1.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +183,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxC1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 139, 130, -1));
 
         boxD1.setEnabled(false);
         boxD1.addActionListener(new java.awt.event.ActionListener() {
@@ -166,6 +191,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxD1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 139, 130, -1));
 
         boxE1.setEnabled(false);
         boxE1.addActionListener(new java.awt.event.ActionListener() {
@@ -173,6 +199,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxE1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 299, 130, -1));
 
         boxF1.setEnabled(false);
         boxF1.addActionListener(new java.awt.event.ActionListener() {
@@ -180,6 +207,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxF1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 299, 130, -1));
 
         boxG1.setEnabled(false);
         boxG1.addActionListener(new java.awt.event.ActionListener() {
@@ -187,6 +215,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxG1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 299, 130, -1));
 
         boxH1.setEnabled(false);
         boxH1.addActionListener(new java.awt.event.ActionListener() {
@@ -194,8 +223,10 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxH1ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 299, 130, -1));
 
         jLabel10.setText("Equipo1");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 142, 51, -1));
 
         boxA2.setEnabled(false);
         boxA2.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +234,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxA2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 170, 130, -1));
 
         boxB2.setEnabled(false);
         boxB2.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +242,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxB2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 170, 130, -1));
 
         boxC2.setEnabled(false);
         boxC2.addActionListener(new java.awt.event.ActionListener() {
@@ -217,6 +250,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxC2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 130, -1));
 
         boxD2.setEnabled(false);
         boxD2.addActionListener(new java.awt.event.ActionListener() {
@@ -224,8 +258,10 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxD2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxD2, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 170, 130, -1));
 
         jLabel11.setText("Equipo2");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 173, -1, -1));
 
         boxA3.setEnabled(false);
         boxA3.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +269,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxA3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 201, 130, -1));
 
         boxB3.setEnabled(false);
         boxB3.addActionListener(new java.awt.event.ActionListener() {
@@ -240,6 +277,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxB3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 201, 130, -1));
 
         boxC3.setEnabled(false);
         boxC3.addActionListener(new java.awt.event.ActionListener() {
@@ -247,6 +285,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxC3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxC3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 201, 130, -1));
 
         boxD3.setEnabled(false);
         boxD3.addActionListener(new java.awt.event.ActionListener() {
@@ -254,8 +293,10 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxD3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxD3, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 201, 130, -1));
 
         jLabel12.setText("Equipo3");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 204, -1, -1));
 
         boxA4.setEnabled(false);
         boxA4.addActionListener(new java.awt.event.ActionListener() {
@@ -263,6 +304,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxA4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxA4, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 232, 130, -1));
 
         boxB4.setEnabled(false);
         boxB4.addActionListener(new java.awt.event.ActionListener() {
@@ -270,6 +312,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxB4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 232, 130, -1));
 
         boxC4.setEnabled(false);
         boxC4.addActionListener(new java.awt.event.ActionListener() {
@@ -277,6 +320,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxC4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxC4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 232, 130, -1));
 
         boxD4.setEnabled(false);
         boxD4.addActionListener(new java.awt.event.ActionListener() {
@@ -284,10 +328,13 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxD4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxD4, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 232, 130, -1));
 
         jLabel13.setText("Equipo4");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 235, -1, -1));
 
         jLabel14.setText("Equipo1");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 302, -1, -1));
 
         boxE2.setEnabled(false);
         boxE2.addActionListener(new java.awt.event.ActionListener() {
@@ -295,6 +342,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxE2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 330, 130, -1));
 
         boxF2.setEnabled(false);
         boxF2.addActionListener(new java.awt.event.ActionListener() {
@@ -302,6 +350,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxF2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 330, 130, -1));
 
         boxG2.setEnabled(false);
         boxG2.addActionListener(new java.awt.event.ActionListener() {
@@ -309,6 +358,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxG2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxG2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 130, -1));
 
         boxH2.setEnabled(false);
         boxH2.addActionListener(new java.awt.event.ActionListener() {
@@ -316,8 +366,10 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxH2ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxH2, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 330, 130, -1));
 
         jLabel15.setText("Equipo2");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 333, -1, -1));
 
         boxE3.setEnabled(false);
         boxE3.addActionListener(new java.awt.event.ActionListener() {
@@ -325,6 +377,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxE3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 361, 130, -1));
 
         boxF3.setEnabled(false);
         boxF3.addActionListener(new java.awt.event.ActionListener() {
@@ -332,6 +385,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxF3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxF3, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 361, 130, -1));
 
         boxG3.setEnabled(false);
         boxG3.addActionListener(new java.awt.event.ActionListener() {
@@ -339,6 +393,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxG3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxG3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 361, 130, -1));
 
         boxH3.setEnabled(false);
         boxH3.addActionListener(new java.awt.event.ActionListener() {
@@ -346,8 +401,10 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxH3ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxH3, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 361, 130, -1));
 
         jLabel16.setText("Equipo3");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 364, -1, -1));
 
         boxE4.setEnabled(false);
         boxE4.addActionListener(new java.awt.event.ActionListener() {
@@ -355,6 +412,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxE4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxE4, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 392, 130, -1));
 
         boxF4.setEnabled(false);
         boxF4.addActionListener(new java.awt.event.ActionListener() {
@@ -362,6 +420,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxF4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxF4, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 392, 130, -1));
 
         boxG4.setEnabled(false);
         boxG4.addActionListener(new java.awt.event.ActionListener() {
@@ -369,6 +428,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxG4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxG4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 392, 130, -1));
 
         boxH4.setEnabled(false);
         boxH4.addActionListener(new java.awt.event.ActionListener() {
@@ -376,8 +436,10 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 boxH4ActionPerformed(evt);
             }
         });
+        jPanel1.add(boxH4, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 392, 130, -1));
 
         jLabel17.setText("Equipo4");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 398, -1, -1));
 
         botonSimular.setText("Simular Fase Grupos");
         botonSimular.setEnabled(false);
@@ -386,261 +448,65 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 botonSimularActionPerformed(evt);
             }
         });
+        jPanel1.add(botonSimular, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, 169, 60));
 
-        jLabel18.setText("LABELS ->");
+        resultadoA.setText("Resultado grupo A");
+        jPanel1.add(resultadoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 438, 612, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel6)
-                                    .addComponent(boxE2, 0, 70, Short.MAX_VALUE)
-                                    .addComponent(boxE1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(boxE3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(boxE4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(boxF1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(boxG2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boxG1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boxG3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boxG4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(botonElegir)
-                        .addGap(122, 122, 122)
-                        .addComponent(botonDefinidos)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(35, 35, 35))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(boxA4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel12)
-                                            .addGap(10, 10, 10)
-                                            .addComponent(boxA3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel11))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(boxA2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(boxA1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGap(21, 21, 21)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(boxF3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(boxF2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(boxF4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addGap(152, 152, 152))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addComponent(jLabel3)
-                                                .addGap(150, 150, 150)
-                                                .addComponent(jLabel4))
-                                            .addComponent(jLabel1)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(boxB1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(boxB4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(boxC1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(boxC4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(18, 18, 18))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(186, 186, 186)
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(boxD4, 0, 70, Short.MAX_VALUE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(boxD1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel9)
-                                    .addComponent(boxH1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(boxH2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(boxH3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(boxH4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(boxB2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boxB3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(boxC2, 0, 166, Short.MAX_VALUE)
-                                    .addComponent(boxC3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(boxD2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boxD3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(133, 133, 133))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(botonSimular))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultadoH)
-                            .addComponent(resultadoA, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(resultadoG, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(resultadoF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(resultadoE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(resultadoD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGap(46, 46, 46)
-                                    .addComponent(resultadoC, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
-                                .addComponent(resultadoB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addComponent(jLabel18))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonElegir)
-                    .addComponent(botonDefinidos))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boxA1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(boxD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boxA2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxB2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxC2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)
-                    .addComponent(boxD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boxA3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxC3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(boxD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boxA4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxB4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxC4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(boxD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boxE1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxG1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxH1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boxE2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxG2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15)
-                    .addComponent(boxH2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(boxE3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxG3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxH3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(boxE4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel17))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(boxH4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(boxG4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(boxF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(botonSimular)
-                .addGap(33, 33, 33)
-                .addComponent(resultadoA)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resultadoB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resultadoC)
-                .addGap(26, 26, 26)
-                .addComponent(resultadoD)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resultadoE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(resultadoF)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resultadoG)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resultadoH)
-                .addGap(19, 19, 19))
-        );
+        resultadoB.setText("Resultado grupo B");
+        jPanel1.add(resultadoB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 458, 612, -1));
+
+        resultadoC.setText("Resultado grupo C");
+        jPanel1.add(resultadoC, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 478, 612, -1));
+
+        resultadoD.setText("Resultado grupo D");
+        jPanel1.add(resultadoD, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 498, 612, -1));
+
+        resultadoE.setText("Resultado grupo E");
+        jPanel1.add(resultadoE, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 518, 612, -1));
+
+        resultadoF.setText("Resultado grupo F");
+        jPanel1.add(resultadoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 538, 612, -1));
+
+        resultadoG.setText("Resultado grupo G");
+        jPanel1.add(resultadoG, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 558, 612, -1));
+
+        resultadoH.setText("Resultado grupo H");
+        jPanel1.add(resultadoH, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 578, 612, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/logo-copa.png"))); // NOI18N
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 470, -1, -1));
+
+        botonRegistro.setText("Registro");
+        botonRegistro.setEnabled(false);
+        botonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 340, 120, 50));
+
+        jLabel20.setText("Espere unos segundos");
+        jLabel20.setMaximumSize(new java.awt.Dimension(400, 14));
+        jLabel20.setMinimumSize(new java.awt.Dimension(400, 14));
+        jLabel20.setPreferredSize(new java.awt.Dimension(400, 14));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, 400, 30));
+
+        jLabel21.setText(" despues de simular");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 194, -1, 20));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/brasil.jpg"))); // NOI18N
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, -40, 1100, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1023, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -648,6 +514,7 @@ public class VentanaGrupos extends javax.swing.JDialog {
 
     private void botonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSimularActionPerformed
         // TODO add your handling code here:
+        
         int[] grupo1=new int[4];
         int[] grupo2=new int[4];
         int[] grupo3=new int[4];
@@ -656,6 +523,8 @@ public class VentanaGrupos extends javax.swing.JDialog {
         int[] grupo6=new int[4];
         int[] grupo7=new int[4];
         int[] grupo8=new int[4];
+        
+        
 
         for(int j=0;j<32;j++){
             Equipo a1=  (Equipo)boxA1.getSelectedItem();
@@ -790,7 +659,8 @@ public class VentanaGrupos extends javax.swing.JDialog {
                 grupo8[3]=j;
             }
         }
-
+        
+        
         Grupo A= new Grupo("A", equipos.getEquipos(grupo1[0]),  equipos.getEquipos(grupo1[1]),  equipos.getEquipos(grupo1[2]),  equipos.getEquipos(grupo1[3]));
         Grupo B= new Grupo("B", equipos.getEquipos(grupo2[0]),  equipos.getEquipos(grupo2[1]), equipos.getEquipos(grupo2[2]),  equipos.getEquipos(grupo2[3]));
         Grupo C= new Grupo("C", equipos.getEquipos(grupo3[0]), equipos.getEquipos(grupo3[1]), equipos.getEquipos(grupo3[2]), equipos.getEquipos(grupo3[3]));
@@ -799,9 +669,13 @@ public class VentanaGrupos extends javax.swing.JDialog {
         Grupo F= new Grupo("F", equipos.getEquipos(grupo6[0]), equipos.getEquipos(grupo6[1]), equipos.getEquipos(grupo6[2]), equipos.getEquipos(grupo6[3]));
         Grupo G= new Grupo("G", equipos.getEquipos(grupo7[0]), equipos.getEquipos(grupo7[1]), equipos.getEquipos(grupo7[2]), equipos.getEquipos(grupo7[3]));
         Grupo H= new Grupo("H", equipos.getEquipos(grupo8[0]), equipos.getEquipos(grupo8[1]), equipos.getEquipos(grupo8[2]), equipos.getEquipos(grupo8[3]));
-
+        
         FaseGrupos fase = new FaseGrupos(A,B,C,D,E,F,G,H);
+        String s=" ";
+        Escribir.Escribir(s, false);
+        
         Equipo[] winners=SimularFaseGrupos.simular(fase);
+        
         resultadoA.setText("Ganadores Grupo "+A.getLetra()+": "+A.getGanadores()[0].getNombre().trim()+" con "+A.getGanadores()[0].getPuntos()+" pts, "+A.getGanadores()[1].getNombre().trim()+" con "+A.getGanadores()[1].getPuntos()+" pts");
         resultadoB.setText("Ganadores Grupo "+B.getLetra()+": "+B.getGanadores()[0].getNombre().trim()+" con "+B.getGanadores()[0].getPuntos()+" pts, "+B.getGanadores()[1].getNombre().trim()+" con "+B.getGanadores()[1].getPuntos()+" pts");
         resultadoC.setText("Ganadores Grupo "+C.getLetra()+": "+C.getGanadores()[0].getNombre().trim()+" con "+C.getGanadores()[0].getPuntos()+" pts, "+C.getGanadores()[1].getNombre().trim()+" con "+C.getGanadores()[1].getPuntos()+" pts");
@@ -810,6 +684,9 @@ public class VentanaGrupos extends javax.swing.JDialog {
         resultadoF.setText("Ganadores Grupo "+F.getLetra()+": "+F.getGanadores()[0].getNombre().trim()+" con "+F.getGanadores()[0].getPuntos()+" pts, "+F.getGanadores()[1].getNombre().trim()+" con "+F.getGanadores()[1].getPuntos()+" pts");
         resultadoG.setText("Ganadores Grupo "+G.getLetra()+": "+G.getGanadores()[0].getNombre().trim()+" con "+G.getGanadores()[0].getPuntos()+" pts, "+G.getGanadores()[1].getNombre().trim()+" con "+G.getGanadores()[1].getPuntos()+" pts");
         resultadoH.setText("Ganadores Grupo "+H.getLetra()+": "+H.getGanadores()[0].getNombre().trim()+" con "+H.getGanadores()[0].getPuntos()+" pts, "+H.getGanadores()[1].getNombre().trim()+" con "+H.getGanadores()[1].getPuntos()+" pts");
+        
+        botonRegistro.setEnabled(true);
+        
     }//GEN-LAST:event_botonSimularActionPerformed
 
     private void boxH4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxH4ActionPerformed
@@ -2369,6 +2246,43 @@ public class VentanaGrupos extends javax.swing.JDialog {
         boxA1.setEnabled(false);
     }//GEN-LAST:event_boxA1ActionPerformed
 
+    private void botonDefinidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDefinidosActionPerformed
+        
+        try {
+            // TODO add your handling code here:
+            equipos.ListaEquipos();
+        } catch (SQLException ex) {
+            Logger.getLogger(VentanaGrupos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       Grupo A= new Grupo("A", equipos.getEquipos(6),  equipos.getEquipos(13),  equipos.getEquipos(25),  equipos.getEquipos(7));
+                Grupo B= new Grupo("B", equipos.getEquipos(15),  equipos.getEquipos(27), equipos.getEquipos(8),  equipos.getEquipos(3));
+                Grupo C= new Grupo("C", equipos.getEquipos(9), equipos.getEquipos(19), equipos.getEquipos(11), equipos.getEquipos(24));
+                Grupo D= new Grupo("D", equipos.getEquipos(31), equipos.getEquipos(12), equipos.getEquipos(21), equipos.getEquipos(23));
+                Grupo E= new Grupo("E", equipos.getEquipos(30),  equipos.getEquipos(14),  equipos.getEquipos(17),  equipos.getEquipos(20));
+                Grupo F= new Grupo("F", equipos.getEquipos(2), equipos.getEquipos(5), equipos.getEquipos(22), equipos.getEquipos(26));
+                Grupo G= new Grupo("G", equipos.getEquipos(0), equipos.getEquipos(28), equipos.getEquipos(18), equipos.getEquipos(16));
+                Grupo H= new Grupo("H", equipos.getEquipos(4), equipos.getEquipos(1), equipos.getEquipos(29), equipos.getEquipos(10));
+        
+        String s="";
+        Escribir.Escribir(s, false);
+        
+        FaseGrupos fase = new FaseGrupos(A,B,C,D,E,F,G,H);
+        Equipo[] winners=SimularFaseGrupos.simular(fase);
+       
+        resultadoA.setText("Ganadores Grupo "+A.getLetra()+": "+A.getGanadores()[0].getNombre().trim()+" con "+A.getGanadores()[0].getPuntos()+" pts, "+A.getGanadores()[1].getNombre().trim()+" con "+A.getGanadores()[1].getPuntos()+" pts");
+        resultadoB.setText("Ganadores Grupo "+B.getLetra()+": "+B.getGanadores()[0].getNombre().trim()+" con "+B.getGanadores()[0].getPuntos()+" pts, "+B.getGanadores()[1].getNombre().trim()+" con "+B.getGanadores()[1].getPuntos()+" pts");
+        resultadoC.setText("Ganadores Grupo "+C.getLetra()+": "+C.getGanadores()[0].getNombre().trim()+" con "+C.getGanadores()[0].getPuntos()+" pts, "+C.getGanadores()[1].getNombre().trim()+" con "+C.getGanadores()[1].getPuntos()+" pts");
+        resultadoD.setText("Ganadores Grupo "+D.getLetra()+": "+D.getGanadores()[0].getNombre().trim()+" con "+D.getGanadores()[0].getPuntos()+" pts, "+D.getGanadores()[1].getNombre().trim()+" con "+D.getGanadores()[1].getPuntos()+" pts");
+        resultadoE.setText("Ganadores Grupo "+E.getLetra()+": "+E.getGanadores()[0].getNombre().trim()+" con "+E.getGanadores()[0].getPuntos()+" pts, "+E.getGanadores()[1].getNombre().trim()+" con "+E.getGanadores()[1].getPuntos()+" pts");
+        resultadoF.setText("Ganadores Grupo "+F.getLetra()+": "+F.getGanadores()[0].getNombre().trim()+" con "+F.getGanadores()[0].getPuntos()+" pts, "+F.getGanadores()[1].getNombre().trim()+" con "+F.getGanadores()[1].getPuntos()+" pts");
+        resultadoG.setText("Ganadores Grupo "+G.getLetra()+": "+G.getGanadores()[0].getNombre().trim()+" con "+G.getGanadores()[0].getPuntos()+" pts, "+G.getGanadores()[1].getNombre().trim()+" con "+G.getGanadores()[1].getPuntos()+" pts");
+        resultadoH.setText("Ganadores Grupo "+H.getLetra()+": "+H.getGanadores()[0].getNombre().trim()+" con "+H.getGanadores()[0].getPuntos()+" pts, "+H.getGanadores()[1].getNombre().trim()+" con "+H.getGanadores()[1].getPuntos()+" pts");
+        
+        botonRegistro.setEnabled(true);
+        
+    }//GEN-LAST:event_botonDefinidosActionPerformed
+
     private void botonElegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonElegirActionPerformed
         try {
             // TODO add your handling code here:
@@ -2384,83 +2298,17 @@ public class VentanaGrupos extends javax.swing.JDialog {
         boxA1.setEnabled(true);
     }//GEN-LAST:event_botonElegirActionPerformed
 
-    private void botonDefinidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDefinidosActionPerformed
-        try {
-            // TODO add your handling code here:
-            equipos.ListaEquipos();
-        } catch (SQLException ex) {
-            Logger.getLogger(VentanaGrupos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Grupo A= new Grupo("A", equipos.getEquipos(0),  equipos.getEquipos(2),  equipos.getEquipos(3),  equipos.getEquipos(4));
-        Grupo B= new Grupo("B", equipos.getEquipos(9),  equipos.getEquipos(10), equipos.getEquipos(1),  equipos.getEquipos(11));
-        Grupo C= new Grupo("C", equipos.getEquipos(16), equipos.getEquipos(17), equipos.getEquipos(18), equipos.getEquipos(19));
-        Grupo D= new Grupo("D", equipos.getEquipos(24), equipos.getEquipos(25), equipos.getEquipos(26), equipos.getEquipos(27));
-        Grupo E= new Grupo("E", equipos.getEquipos(5),  equipos.getEquipos(6),  equipos.getEquipos(7),  equipos.getEquipos(8));
-        Grupo F= new Grupo("F", equipos.getEquipos(12), equipos.getEquipos(13), equipos.getEquipos(14), equipos.getEquipos(15));
-        Grupo G= new Grupo("G", equipos.getEquipos(20), equipos.getEquipos(21), equipos.getEquipos(22), equipos.getEquipos(23));
-        Grupo H= new Grupo("H", equipos.getEquipos(28), equipos.getEquipos(29), equipos.getEquipos(30), equipos.getEquipos(31));
-        
-        FaseGrupos fase = new FaseGrupos(A,B,C,D,E,F,G,H);
-        Equipo[] winners=SimularFaseGrupos.simular(fase);
-        resultadoA.setText("Ganadores Grupo "+A.getLetra()+": "+A.getGanadores()[0].getNombre().trim()+" con "+A.getGanadores()[0].getPuntos()+" pts, "+A.getGanadores()[1].getNombre().trim()+" con "+A.getGanadores()[1].getPuntos()+" pts");
-        resultadoB.setText("Ganadores Grupo "+B.getLetra()+": "+B.getGanadores()[0].getNombre().trim()+" con "+B.getGanadores()[0].getPuntos()+" pts, "+B.getGanadores()[1].getNombre().trim()+" con "+B.getGanadores()[1].getPuntos()+" pts");
-        resultadoC.setText("Ganadores Grupo "+C.getLetra()+": "+C.getGanadores()[0].getNombre().trim()+" con "+C.getGanadores()[0].getPuntos()+" pts, "+C.getGanadores()[1].getNombre().trim()+" con "+C.getGanadores()[1].getPuntos()+" pts");
-        resultadoD.setText("Ganadores Grupo "+D.getLetra()+": "+D.getGanadores()[0].getNombre().trim()+" con "+D.getGanadores()[0].getPuntos()+" pts, "+D.getGanadores()[1].getNombre().trim()+" con "+D.getGanadores()[1].getPuntos()+" pts");
-        resultadoE.setText("Ganadores Grupo "+E.getLetra()+": "+E.getGanadores()[0].getNombre().trim()+" con "+E.getGanadores()[0].getPuntos()+" pts, "+E.getGanadores()[1].getNombre().trim()+" con "+E.getGanadores()[1].getPuntos()+" pts");
-        resultadoF.setText("Ganadores Grupo "+F.getLetra()+": "+F.getGanadores()[0].getNombre().trim()+" con "+F.getGanadores()[0].getPuntos()+" pts, "+F.getGanadores()[1].getNombre().trim()+" con "+F.getGanadores()[1].getPuntos()+" pts");
-        resultadoG.setText("Ganadores Grupo "+G.getLetra()+": "+G.getGanadores()[0].getNombre().trim()+" con "+G.getGanadores()[0].getPuntos()+" pts, "+G.getGanadores()[1].getNombre().trim()+" con "+G.getGanadores()[1].getPuntos()+" pts");
-        resultadoH.setText("Ganadores Grupo "+H.getLetra()+": "+H.getGanadores()[0].getNombre().trim()+" con "+H.getGanadores()[0].getPuntos()+" pts, "+H.getGanadores()[1].getNombre().trim()+" con "+H.getGanadores()[1].getPuntos()+" pts");
-    }//GEN-LAST:event_botonDefinidosActionPerformed
+    private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
+        // TODO add your handling code here:
+        VentanaRegistro window=new VentanaRegistro(padre,true);
+        window.setVisible(true);
+    }//GEN-LAST:event_botonRegistroActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaGrupos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaGrupos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaGrupos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaGrupos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    VentanaGrupos dialog = new VentanaGrupos(new javax.swing.JFrame(), true);
-                    dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                        @Override
-                        public void windowClosing(java.awt.event.WindowEvent e) {
-                            System.exit(0);
-                        }
-                    });
-                    dialog.setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(VentanaGrupos.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonDefinidos;
     private javax.swing.JButton botonElegir;
+    private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonSimular;
     private javax.swing.JComboBox boxA1;
     private javax.swing.JComboBox boxA2;
@@ -2504,7 +2352,10 @@ public class VentanaGrupos extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

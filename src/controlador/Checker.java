@@ -4,6 +4,7 @@ import modelo.*;
 /**
  *
  * @author Escar
+ * checker revisa si se produce un enfrentamiento y si es que algun jugador posee el balon
  */
 public class Checker {
     public static boolean checkEnfrentamiento(Cancha cancha, int x, int y){

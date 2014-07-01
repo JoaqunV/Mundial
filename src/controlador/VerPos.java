@@ -5,6 +5,8 @@ import modelo.*;
  * @author Escar
  * 
  *  VerPos muestra por pantalla lo que ocurre en cancha
+ *  muestra un dibujo con la posicion aproximada de los jugadores 
+ *  SOLO SE USA PARA REVISION 
  */
 public class VerPos {
     public static void ver(Cancha cancha){

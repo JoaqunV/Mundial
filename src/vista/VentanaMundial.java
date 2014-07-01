@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package vista;
 
+import controlador.Escribir;
 import controlador.ListaEquipos;
 import controlador.SegundaFase;
 import controlador.SimularFaseGrupos;
@@ -20,9 +16,13 @@ import modelo.Grupo;
 /**
  *
  * @author Escar
+ * 
+ * VentanaMundial Muestra por pantalla el resultado del mundial Brazil 2014
+ * permite la interaccion con el usuario solo para revisar el registro de lo ocurrido
  */
 public class VentanaMundial extends javax.swing.JDialog {
     ListaEquipos equipos = new ListaEquipos();
+    private VentanaP padre=(VentanaP) this.getParent();
     /**
      * Creates new form VentanaMundial
      */
@@ -45,53 +45,65 @@ public class VentanaMundial extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         botonSimular = new javax.swing.JButton();
         resultado = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Banner2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        botonRegistro = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Mundial");
+        setResizable(false);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Brazil 2014", 0, 24)); // NOI18N
         jLabel1.setText("Mundial");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, -1, -1));
 
+        botonSimular.setBackground(new java.awt.Color(255, 255, 255));
         botonSimular.setText("Simular");
         botonSimular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSimularActionPerformed(evt);
             }
         });
+        jPanel1.add(botonSimular, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 530, 95, 45));
 
+        resultado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         resultado.setText("Resultado");
+        jPanel1.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 336, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botonSimular)
-                            .addComponent(jLabel1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(83, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(29, 29, 29)
-                .addComponent(botonSimular)
-                .addGap(30, 30, 30)
-                .addComponent(resultado)
-                .addContainerGap(224, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/logo-copa.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, -1));
+
+        Banner2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/banner_02.jpg"))); // NOI18N
+        jPanel1.add(Banner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 260));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/futbol2.gif"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 420, 290));
+
+        botonRegistro.setText("Registro");
+        botonRegistro.setEnabled(false);
+        botonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, 90, 40));
+
+        jLabel2.setText("Espere unos segundos despues de simular");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 660, -1, 20));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/Imagenes/rio.jpg"))); // NOI18N
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 940, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,71 +130,40 @@ public class VentanaMundial extends javax.swing.JDialog {
                 Grupo G= new Grupo("G", equipos.getEquipos(0), equipos.getEquipos(28), equipos.getEquipos(18), equipos.getEquipos(16));
                 Grupo H= new Grupo("H", equipos.getEquipos(4), equipos.getEquipos(1), equipos.getEquipos(29), equipos.getEquipos(10));
        
+                String s="";
+                Escribir.Escribir(s, false);
                 FaseGrupos fase = new FaseGrupos(A,B,C,D,E,F,G,H);
                 Equipo[] winners=SimularFaseGrupos.simular(fase);
         
         
-                for(int i=0;i<8;i++)
-                    System.out.println("Ganadores grupo:"+fase.getGrupos(i).getLetra()+" "+fase.getGrupos(i).getGanadores()[0].getNombre().trim()+"="+fase.getGrupos(i).getGanadores()[0].getPuntos()+", "+fase.getGrupos(i).getGanadores()[1].getNombre().trim()+"= "+fase.getGrupos(i).getGanadores()[1].getPuntos());
+                for(int i=0;i<8;i++){
+                    s=("Ganadores grupo:"+fase.getGrupos(i).getLetra()+" "+fase.getGrupos(i).getGanadores()[0].getNombre().trim()+"="+fase.getGrupos(i).getGanadores()[0].getPuntos()+", "+fase.getGrupos(i).getGanadores()[1].getNombre().trim()+"= "+fase.getGrupos(i).getGanadores()[1].getPuntos());
+                    Escribir.Escribir(s, true);
+                }
         
-
-        
-                System.out.println("\n=================================\n");
- 
+                s=("\n=================================\n");
+                Escribir.Escribir(s, true);
                 Equipo Ganadorsh =SegundaFase.simular(winners);
         
                 resultado.setText("El Equipo ganador del Mundial es: " + Ganadorsh.getNombre().trim() );
+                botonRegistro.setEnabled(true);
     }//GEN-LAST:event_botonSimularActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaMundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaMundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaMundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaMundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    VentanaMundial dialog = new VentanaMundial(new javax.swing.JFrame(), true);
-                    dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                        @Override
-                        public void windowClosing(java.awt.event.WindowEvent e) {
-                            System.exit(0);
-                        }
-                    });
-                    dialog.setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(VentanaMundial.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
+    private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
+        // TODO add your handling code here:
+        VentanaRegistro window=new VentanaRegistro(padre,true);
+            window.setVisible(true);
+    }//GEN-LAST:event_botonRegistroActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Banner2;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonSimular;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel resultado;
     // End of variables declaration//GEN-END:variables

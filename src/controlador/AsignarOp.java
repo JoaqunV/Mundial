@@ -5,6 +5,7 @@ import modelo.*;
 /**
  *
  * @author Escar
+ * AsignarOp calcula la op de cada jugador teniendo cuenta al jugador mas cercano
  */
 
 public class AsignarOp {

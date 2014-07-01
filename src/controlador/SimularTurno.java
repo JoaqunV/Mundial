@@ -6,6 +6,7 @@ import modelo.*;
  * @author Escar
  * 
  *  SimularPartido llama a las demas funciones y evalua los movimientos de los jugadores por turno
+ *  aqui se asignan los valores para la evaluacion de las posibles acciones de los jugadores
  */
 public class SimularTurno {
     public static void turno(Cancha prueba1, Pelota pelota)
